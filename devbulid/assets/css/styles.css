@@ -1,0 +1,19 @@
+#about {
+  background: var(--bs-success-bg-subtle);
+  border-width: 3px;
+  border-style: dashed;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 20px;
+  width: 90%;
+  margin-top: 40px;
+}
+
+@media (min-width: 1111px) {
+  #about {
+    width: 50%;
+  }
+}
+
