@@ -1,0 +1,31 @@
+name: Check Link Status
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget curl jq
+
+      - name: Check link status
+        run: |
+          for file in $(find . -name "*.html"); do
+            echo "Checking links in $file..."
+            wget -q -O - $file | grep -oE "(?<=href=[\"\'])([^\"'\)]+)" | while read -r url; do
+              status_code=$(curl -o /dev/null -w "%{http_code}" -s "$url")
+              if [[ $status_code != "200" ]]; then
+                echo "Error: Link $url in $file returned status code $status_code"
+                exit 1
+              fi
+            done
+          done
+          echo "All links passed the check!"
