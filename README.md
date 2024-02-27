@@ -6,6 +6,7 @@ This is where thapat.me code rest
 
 Please note that the devbulid will not be updated every web change.
 It will be updated when it stable enough.
+AKA it work.
 
 ```
 Powered by Github Pages
