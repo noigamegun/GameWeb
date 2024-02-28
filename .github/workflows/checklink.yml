@@ -16,7 +16,12 @@ jobs:
         node-version: '18'
 
     - name: Install dependencies
-      run: npm install broken-link-checker -g
+      run: npm install link-check -g
 
     - name: Check links
-      run: find . -name "*.html" -exec blc {} -ro \; || echo "Broken links found" > broken_links.txt
+      run: |
+        FILES=$(find . -name "*.html")
+        for FILE in $FILES
+        do
+          link-check $FILE || echo "Broken links found in $FILE" >> broken_links.txt
+        done
