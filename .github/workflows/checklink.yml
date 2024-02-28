@@ -1,0 +1,26 @@
+name: Check for Broken Links 
+
+on: [push,pull_request]  # Trigger the workflow on push events
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4  # Checkout your repository's code
+
+      - name: Install linkchecker and dependency  # Install the linkchecker tool
+        run: sudo apt-get update && sudo apt-get install -y linkchecker python3 python3-bs4 python3-dnspython python3-requests python3-urllib3
+
+      - name: Scan for broken links
+        run: linkchecker --check-extern . > brokenlinks.txt
+
+      - name: Fail if broken links found
+        if: contains(steps.linkchecker.outputs.stderr, 'BROKEN')
+        run: exit 1
+
+      - name: Upload brokenlinks.txt
+        uses: actions/upload-artifact@v4
+        with:
+          name: brokenlinks
+          path: brokenlinks.txt
