@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 html_files = []
 
 # Specify the path to your repository
-repo_path = '/Users/game/github/GameWeb'
+repo_path = '/'
 
 # Traverse through all directories and files in the repository
 for root, dirs, files in os.walk(repo_path):

@@ -1,4 +1,26 @@
-  name: CheckLinks
-  run-name: CheckLinks
-  on: [push,pull_request]
-  jobs:
+name: CheckLinks
+
+run-name: Checking Links
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  checklinks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: sudo apt update && sudo apt install -y python3 python3-pip && pip3 install requests && pip3 install bs4 && pip3 install os
+
+      - name: Run Python Script
+        run: python3 .github/scripts/checklinks.py
