@@ -1,0 +1,4 @@
+  name: CheckLinks
+  run-name: CheckLinks
+  on: [push,pull_request]
+  jobs:
