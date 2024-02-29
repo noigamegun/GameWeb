@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          ref: 6-add-a-check-for-broken-links
 
       - name: Install Dependencies
         run: sudo apt update && sudo apt install -y python3 python3-pip && pip3 install requests && pip3 install bs4
