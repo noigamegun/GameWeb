@@ -6,6 +6,7 @@ import os
 from bs4 import BeautifulSoup
 
 html_files = []
+brokenlink = False
 
 # Specify the path to your repository
 repo_path = '/home/runner/work/GameWeb/GameWeb/'
@@ -55,6 +56,8 @@ for file_path in html_files:
                     # Check the response status code
                     if response.status_code == 404:
                         print(f"Link {href} in file {file_path} is broken.")
+                        brokenlink = True
+                        
                     else:
                         print(f"Link {href} in file {file_path} is working.")
 
@@ -72,5 +75,11 @@ for file_path in html_files:
                     # Check the response status code
                     if response.status_code == 404:
                         print(f"Link {href} in file {file_path} is broken.")
+                        brokenlink = True
                     else:
                         print(f"Link {href} in file {file_path} is working.")
+print("\n")
+if brokenlink:
+    print("One or more links are broken.")
+else:
+    print("All links have been checked and passed.")
