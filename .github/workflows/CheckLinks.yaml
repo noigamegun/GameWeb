@@ -26,4 +26,4 @@ jobs:
         run: sudo apt update && sudo apt install -y python3 python3-pip && pip3 install requests && pip3 install bs4
 
       - name: Run Python Script
-        run: python3 .github/scripts/checklinks.py
+        run: python3 .github/scripts/CheckLinks.py
