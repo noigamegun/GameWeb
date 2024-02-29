@@ -1,6 +1,6 @@
 name: CheckLinks
 
-run-name: Checking Links
+run-name: CheckLinks
 
 on:
   push:
