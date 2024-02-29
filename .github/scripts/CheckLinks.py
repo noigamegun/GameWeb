@@ -1,6 +1,3 @@
-# Tested On My Mac. Not GitHub Actions.
-# Need to fix the code to work with GitHub Actions.
-
 import requests
 import os
 from bs4 import BeautifulSoup
