@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 html_files = []
 
 # Specify the path to your repository
-repo_path = '/'
+repo_path = '/home/runner/work/GameWeb/GameWeb/'
 
 # Traverse through all directories and files in the repository
 for root, dirs, files in os.walk(repo_path):
@@ -29,7 +29,7 @@ for file_path in html_files:
         # Read the contents of the file
         html_content = file.read()
     # Remove Local Path
-    true_path = os.path.relpath(os.path.dirname(file_path), start="/Users/game/github/GameWeb") + "/"
+    true_path = os.path.relpath(os.path.dirname(file_path), start="/home/runner/work/GameWeb/GameWeb") + "/"
     # Parse the HTML content
     soup = BeautifulSoup(html_content, 'html.parser')
 
