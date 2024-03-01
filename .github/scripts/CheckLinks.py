@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 html_files = []
 brokenlink = False
+external = False
 
 # Specify the path to your repository
 repo_path = '/home/runner/work/GameWeb/GameWeb/'
@@ -42,7 +43,9 @@ for file_path in html_files:
         if href is not None and href != '':
             # Check if the link is a "#"
             if href == '#':
+                print()
                 print(f"Link in file {file_path} Leads to nothing. Skipping...")
+                print()
             # If the link is not a "#"
             else:
                 # Check if the link is an external link
@@ -51,32 +54,60 @@ for file_path in html_files:
                     response = requests.head(href)
 
                     # Check the response status code
-                    if response.status_code == 404:
-                        print(f"Link {href} in file {file_path} is broken.")
-                        brokenlink = True
-                        
+                    if response.status_code != 200:
+                        print()
+                        print(f"External link {href} in file {file_path} is broken.")
+                        print("This is moslty due to the fact that the website is not available as the time of this check.")
+                        print("If this is a false positive, please check the website manually and rerun the check.")
+                        print("If this is a false positive and a pull request, please contact the owner of the repository.")
+                        print("received status code: " + str(response.status_code))
+                        print()
+                        external = True
                     else:
-                        print(f"Link {href} in file {file_path} is working.")
+                        print()
+                        print(f"External link {href} in file {file_path} is working.")
+                        print()
 
                 # Check if the link is an email link
                 elif href.startswith('mailto:'):
+                    print()
                     print(f"Link in file {file_path} Leads to mailto. Skipping...")
+                    print()
 
                 # If the link is not an external link or an email link and it a local file in the repository
                 else:
-                    href = "https://thapat.me/" + true_path + href
+                    href = "/home/runner/work/GameWeb/GameWeb/" + true_path + href
 
                     # Make a request to the URL
                     response = requests.head(href)
 
                     # Check the response status code
-                    if response.status_code == 404:
-                        print(f"Link {href} in file {file_path} is broken.")
-                        brokenlink = True
+                    if os.path.isfile(href):
+                        print()
+                        print(f"Local file link {href} in file {file_path} is working")
+                        print()
                     else:
-                        print(f"Link {href} in file {file_path} is working.")
-print("\n")
+                        print()
+                        print(f"Local file link {href} in file {file_path} is broken.")
+                        print()
+                        brokenlink = True
+
+# Report the result of the link check. If there are broken links, exit with a non-zero status code to trip GitHub Actions.
 if brokenlink:
-    print("One or more links are broken.")
+    print("\n")
+    print("All links have been checked.")
+    print("One or more local links are broken.")
+    exit(1)
+elif external:
+    print("\n")
+    print("All links have been checked.")
+    print("One or more external links are broken.")
+    exit(1)
+elif brokenlink and external:
+    print("\n")
+    print("All links have been checked.")
+    print("One or more local and external links are broken.")
+    exit(1)
 else:
+    print("\n")
     print("All links have been checked and passed.")
