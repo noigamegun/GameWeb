@@ -16,9 +16,10 @@ with open('/home/runner/work/GameWeb/GameWeb/.github/scripts/CheckLinks/knownhtm
     for line in f:
         knownhtmlfiles.append(line.rstrip('\n'))
     actualknownhtmlfilespath = []
+    actualknownhtmlfilescount = 0
     for i in knownhtmlfiles:
-        actualknownhtmlfilespathcount = 0
         actualknownhtmlfilespath.append("/home/runner/work/GameWeb/GameWeb/" + knownhtmlfiles[0])
+        actualknownhtmlfilescount += 1
 
 print("Known HTML Files: " + str(knownhtmlfiles))
 print("\n")
@@ -52,6 +53,7 @@ for file_path in html_files:
     with open(file_path, 'r') as file:
         # Read the contents of the file
         html_content = file.read()
+
     # Remove Local Path
     true_path = os.path.relpath(os.path.dirname(file_path), start="/home/runner/work/GameWeb/GameWeb") + "/"
     # Parse the HTML content
