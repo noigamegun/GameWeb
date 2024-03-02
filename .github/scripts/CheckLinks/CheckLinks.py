@@ -3,6 +3,7 @@ import os
 from bs4 import BeautifulSoup
 
 html_files = []
+knownhtmlfiles = []
 brokenlink = False
 external = False
 missingknownhtmlfile = False
@@ -12,7 +13,8 @@ unknownhtmlfile = False
 repo_path = '/home/runner/work/GameWeb/GameWeb/'
 
 with open('/home/runner/work/GameWeb/GameWeb/.github/scripts/CheckLinks/knownhtmlfiles.txt', 'r') as f:
-    knownhtmlfiles = [line.rstrip('\n') for line in f]
+    for line in f:
+        knownhtmlfiles.append(line.rstrip('\n'))
     actualknownhtmlfilespath = []
     for i in knownhtmlfiles:
         actualknownhtmlfilespathcount = 0
