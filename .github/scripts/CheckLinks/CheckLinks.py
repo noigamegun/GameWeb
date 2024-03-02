@@ -12,7 +12,7 @@ unknownhtmlfile = False
 repo_path = '/home/runner/work/GameWeb/GameWeb/'
 
 with open('/home/runner/work/GameWeb/GameWeb/.github/scripts/CheckLinks/knownhtmlfiles.txt', 'r') as f:
-    knownhtmlfiles = f.readlines()
+    knownhtmlfiles = [line.rstrip('\n') for line in f]
     actualknownhtmlfilespath = []
     for i in knownhtmlfiles:
         actualknownhtmlfilespathcount = 0
