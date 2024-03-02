@@ -149,7 +149,11 @@ if unknownhtmlfile:
     print("Please check if the file is valid in the repository and add it to knownhtmlfile.txt.")
     print("Or if the file is invalid, please remove it from the repository.")
     exitasfailed = True
-
+if not brokenlink and not external and not missingknownhtmlfile and not unknownhtmlfile:
+    print()
+    print("All checks passed. There are no broken links in the repository.")
+    print("Please note that this check does not check for javascript links.")
+    print("Please note that this check does not check for links in css files.")
 if exitasfailed:
     print()
     print("Exiting with code 1...")
