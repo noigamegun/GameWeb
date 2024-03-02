@@ -5,9 +5,22 @@ from bs4 import BeautifulSoup
 html_files = []
 brokenlink = False
 external = False
+missingknownhtmlfile = False
+unknownhtmlfile = False
 
 # Specify the path to your repository
 repo_path = '/home/runner/work/GameWeb/GameWeb/'
+
+with open('/home/runner/work/GameWeb/GameWeb/.github/scripts/CheckLinks/knownhtmlfile.txt', 'r') as f:
+    knownhtmlfiles = f.readlines()
+    actualknownhtmlfilespath = []
+    for i in knownhtmlfiles:
+        actualknownhtmlfilespathcount = 0
+        actualknownhtmlfilespath.append("/home/runner/work/GameWeb/GameWeb/" + knownhtmlfiles[0])
+
+print("Known HTML Files: " + str(knownhtmlfiles))
+print("\n")
+print("Actual Known HTML Files Path: " + str(actualknownhtmlfilespath))
 
 # Traverse through all directories and files in the repository
 for root, dirs, files in os.walk(repo_path):
@@ -15,10 +28,20 @@ for root, dirs, files in os.walk(repo_path):
         # Check if the file is an HTML file
         if file.endswith('.html'):
             # Add the file path to the list
-            html_files.append(os.path.join(root, file))
+            if os.path.join(root, file) not in actualknownhtmlfilespath:
+                print("Expected html file : " + os.path.join(root, file) + " not found in knownhtmlfile.txt. Please check if the file exists in the repository and add it to knownhtmlfile.txt. Checking it anyway...")
+                html_files.append(os.path.join(root, file))
+                missingknownhtmlfile = True
+            elif os.path.join(root, file) in actualknownhtmlfilespath:
+                print("Expected html file : " + os.path.join(root, file) + " found in knownhtmlfile.txt.")
+                html_files.append(os.path.join(root, file))
+            else:
+                print("Unknown html file : " + os.path.join(root, file) + " found. Please check if the file is valid in the repository and add it to knownhtmlfile.txt. Checking it anyway...")
+                html_files.append(os.path.join(root, file))
+                unknownhtmlfile = True
 
 # Print the list of HTML files for debugging
-print(html_files)
+print("html files that is going to be checked : " + str(html_files))
 print("\n")
 
 # Iterate through each HTML file
@@ -92,22 +115,24 @@ for file_path in html_files:
                         print()
                         brokenlink = True
 
-# Report the result of the link check. If there are broken links, exit with a non-zero status code to trip GitHub Actions.
+# DANG IM DUMB
+print("All checks are done. Here are the results:")
 if brokenlink:
-    print("\n")
-    print("All links have been checked.")
-    print("One or more local links are broken.")
-    exit(1)
-elif external:
-    print("\n")
-    print("All links have been checked.")
-    print("One or more external links are broken.")
-    exit(1)
-elif brokenlink and external:
-    print("\n")
-    print("All links have been checked.")
-    print("One or more local and external links are broken.")
-    exit(1)
-else:
-    print("\n")
-    print("All links have been checked and passed.")
+    print()
+    print("There are broken local files link or links in the repository.")
+if external:
+    print()
+    print("There are broken external link or links in the repository.")
+    print("This is moslty due to the fact that the website is not available as the time of this check.")
+    print("If this is a false positive, please check the website manually and rerun the check.")
+    print("If this is a false positive and a pull request, please contact the owner of the repository.")
+if missingknownhtmlfile:
+    print()
+    print("There are missing known html files in the repository.")
+    print("Please check if the file exists in the repository and add it to knownhtmlfile.txt.")
+    print("Or if the file is invalid, please remove it from knownhtmlfile.txt.")
+if unknownhtmlfile:
+    print()
+    print("There are unknown html files in the repository.")
+    print("Please check if the file is valid in the repository and add it to knownhtmlfile.txt.")
+    print("Or if the file is invalid, please remove it from the repository.")

@@ -2,13 +2,11 @@
 
 # GameWeb
 
-This is where thapat.me code rest
+This is where the code for thapat.me rests.
 
-Please note that the devbulid will not be updated every web change.
-It will be updated when it stable enough.
-AKA it work.
+Please note that the devbuild will not be updated with every web change.
+It will be updated when it is stable enough.
+AKA, when it works.
 
-```
-Powered by Github Pages
+Powered by GitHub Pages
 Status badge by Better Stack
-```
