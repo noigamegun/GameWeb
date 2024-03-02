@@ -1,3 +1,7 @@
+# IGNORE THIS WARNING : 
+# /home/runner/work/GameWeb/GameWeb/.github/scripts/CheckLinks/CheckLinks.py:60: MarkupResemblesLocatorWarning: The input looks more like a filename than markup. You may want to open this file and pass the filehandle into Beautiful Soup. soup = BeautifulSoup(html_content, 'html.parser')
+# some bs4 bugs that i cant fix
+
 import requests
 import os
 from bs4 import BeautifulSoup
@@ -77,7 +81,7 @@ for file_path in html_files:
             else:
                 # Check if the link is an external link
                 if href.startswith('http://') or href.startswith('https://'):
-                    
+
                     # Make a request to the URL
                     response = requests.head(href)
 
