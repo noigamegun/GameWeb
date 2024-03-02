@@ -15,11 +15,11 @@ repo_path = '/home/runner/work/GameWeb/GameWeb/'
 with open('/home/runner/work/GameWeb/GameWeb/.github/scripts/CheckLinks/knownhtmlfiles.txt', 'r') as f:
     for line in f:
         knownhtmlfiles.append(line.rstrip('\n'))
-    actualknownhtmlfilespath = []
-    actualknownhtmlfilescount = 0
-    for i in knownhtmlfiles:
-        actualknownhtmlfilespath.append("/home/runner/work/GameWeb/GameWeb/" + knownhtmlfiles[0])
-        actualknownhtmlfilescount += 1
+actualknownhtmlfilespath = []
+actualknownhtmlfilescount = 0
+for i in knownhtmlfiles:
+    actualknownhtmlfilespath.append("/home/runner/work/GameWeb/GameWeb/" + knownhtmlfiles[0])
+    actualknownhtmlfilescount += 1
 
 print("Known HTML Files: " + str(knownhtmlfiles))
 print("\n")
