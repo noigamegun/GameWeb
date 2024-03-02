@@ -18,7 +18,7 @@ with open('/home/runner/work/GameWeb/GameWeb/.github/scripts/CheckLinks/knownhtm
 actualknownhtmlfilespath = []
 actualknownhtmlfilescount = 0
 for i in knownhtmlfiles:
-    actualknownhtmlfilespath.append("/home/runner/work/GameWeb/GameWeb/" + knownhtmlfiles[0])
+    actualknownhtmlfilespath.append("/home/runner/work/GameWeb/GameWeb/" + knownhtmlfiles[actualknownhtmlfilescount])
     actualknownhtmlfilescount += 1
 
 print("Known HTML Files: " + str(knownhtmlfiles))
