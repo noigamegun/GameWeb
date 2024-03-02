@@ -25,9 +25,11 @@ for i in knownhtmlfiles:
     actualknownhtmlfilespath.append("/home/runner/work/GameWeb/GameWeb/" + knownhtmlfiles[actualknownhtmlfilescount])
     actualknownhtmlfilescount += 1
 
+print("\n")
 print("Known HTML Files: " + str(knownhtmlfiles))
 print("\n")
 print("Actual Known HTML Files Path: " + str(actualknownhtmlfilespath))
+print("\n")
 
 # Traverse through all directories and files in the repository
 for root, dirs, files in os.walk(repo_path):
@@ -48,6 +50,7 @@ for root, dirs, files in os.walk(repo_path):
                 unknownhtmlfile = True
 
 # Print the list of HTML files for debugging
+print("\n")
 print("html files that is going to be checked : " + str(html_files))
 print("\n")
 
@@ -121,11 +124,13 @@ for file_path in html_files:
                         print()
                         brokenlink = True
 
+exitasfailed = False
 # DANG IM DUMB
 print("All checks are done. Here are the results:")
 if brokenlink:
     print()
     print("There are broken local files link or links in the repository.")
+    exitasfailed = True
 if external:
     print()
     print("There are broken external link or links in the repository.")
@@ -137,8 +142,15 @@ if missingknownhtmlfile:
     print("There are missing known html files in the repository.")
     print("Please check if the file exists in the repository and add it to knownhtmlfile.txt.")
     print("Or if the file is invalid, please remove it from knownhtmlfile.txt.")
+    exitasfailed = True
 if unknownhtmlfile:
     print()
     print("There are unknown html files in the repository.")
     print("Please check if the file is valid in the repository and add it to knownhtmlfile.txt.")
     print("Or if the file is invalid, please remove it from the repository.")
+    exitasfailed = True
+
+if exitasfailed:
+    print()
+    print("Exiting with code 1...")
+    exit(1)
