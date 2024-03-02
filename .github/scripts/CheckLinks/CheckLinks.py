@@ -77,6 +77,7 @@ for file_path in html_files:
             else:
                 # Check if the link is an external link
                 if href.startswith('http://') or href.startswith('https://'):
+                    
                     # Make a request to the URL
                     response = requests.head(href)
 
@@ -104,9 +105,6 @@ for file_path in html_files:
                 # If the link is not an external link or an email link and it a local file in the repository
                 else:
                     href = "/home/runner/work/GameWeb/GameWeb/" + true_path + href
-
-                    # Make a request to the URL
-                    response = requests.head(href)
 
                     # Check the response status code
                     if os.path.isfile(href):
