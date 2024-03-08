@@ -1,13 +1,35 @@
+# IGNORE THIS WARNING : 
+# /home/runner/work/GameWeb/GameWeb/.github/scripts/CheckLinks/CheckLinks.py:60: MarkupResemblesLocatorWarning: The input looks more like a filename than markup. You may want to open this file and pass the filehandle into Beautiful Soup. soup = BeautifulSoup(html_content, 'html.parser')
+# some bs4 bugs that i cant fix
+
 import requests
 import os
 from bs4 import BeautifulSoup
 
 html_files = []
+knownhtmlfiles = []
 brokenlink = False
 external = False
+missingknownhtmlfile = False
+unknownhtmlfile = False
 
 # Specify the path to your repository
 repo_path = '/home/runner/work/GameWeb/GameWeb/'
+
+with open('/home/runner/work/GameWeb/GameWeb/.github/scripts/CheckLinks/knownhtmlfiles.txt', 'r') as f:
+    for line in f:
+        knownhtmlfiles.append(line.rstrip('\n'))
+actualknownhtmlfilespath = []
+actualknownhtmlfilescount = 0
+for i in knownhtmlfiles:
+    actualknownhtmlfilespath.append("/home/runner/work/GameWeb/GameWeb/" + knownhtmlfiles[actualknownhtmlfilescount])
+    actualknownhtmlfilescount += 1
+
+print("\n")
+print("Known HTML Files: " + str(knownhtmlfiles))
+print("\n")
+print("Actual Known HTML Files Path: " + str(actualknownhtmlfilespath))
+print("\n")
 
 # Traverse through all directories and files in the repository
 for root, dirs, files in os.walk(repo_path):
@@ -15,10 +37,21 @@ for root, dirs, files in os.walk(repo_path):
         # Check if the file is an HTML file
         if file.endswith('.html'):
             # Add the file path to the list
-            html_files.append(os.path.join(root, file))
+            if os.path.join(root, file) not in actualknownhtmlfilespath:
+                print("Expected html file : " + os.path.join(root, file) + " not found in knownhtmlfile.txt. Please check if the file exists in the repository and add it to knownhtmlfile.txt. Checking it anyway...")
+                html_files.append(os.path.join(root, file))
+                missingknownhtmlfile = True
+            elif os.path.join(root, file) in actualknownhtmlfilespath:
+                print("Expected html file : " + os.path.join(root, file) + " found in knownhtmlfile.txt.")
+                html_files.append(os.path.join(root, file))
+            else:
+                print("Unknown html file : " + os.path.join(root, file) + " found. Please check if the file is valid in the repository and add it to knownhtmlfile.txt. Checking it anyway...")
+                html_files.append(os.path.join(root, file))
+                unknownhtmlfile = True
 
 # Print the list of HTML files for debugging
-print(html_files)
+print("\n")
+print("html files that is going to be checked : " + str(html_files))
 print("\n")
 
 # Iterate through each HTML file
@@ -27,6 +60,7 @@ for file_path in html_files:
     with open(file_path, 'r') as file:
         # Read the contents of the file
         html_content = file.read()
+
     # Remove Local Path
     true_path = os.path.relpath(os.path.dirname(file_path), start="/home/runner/work/GameWeb/GameWeb") + "/"
     # Parse the HTML content
@@ -50,6 +84,7 @@ for file_path in html_files:
             else:
                 # Check if the link is an external link
                 if href.startswith('http://') or href.startswith('https://'):
+
                     # Make a request to the URL
                     response = requests.head(href)
 
@@ -78,9 +113,6 @@ for file_path in html_files:
                 else:
                     href = "/home/runner/work/GameWeb/GameWeb/" + true_path + href
 
-                    # Make a request to the URL
-                    response = requests.head(href)
-
                     # Check the response status code
                     if os.path.isfile(href):
                         print()
@@ -92,22 +124,37 @@ for file_path in html_files:
                         print()
                         brokenlink = True
 
-# Report the result of the link check. If there are broken links, exit with a non-zero status code to trip GitHub Actions.
+exitasfailed = False
+# DANG IM DUMB
+print("All checks are done. Here are the results:")
 if brokenlink:
-    print("\n")
-    print("All links have been checked.")
-    print("One or more local links are broken.")
+    print()
+    print("There are broken local files link or links in the repository.")
+    exitasfailed = True
+if external:
+    print()
+    print("There are broken external link or links in the repository.")
+    print("This is moslty due to the fact that the website is not available as the time of this check.")
+    print("If this is a false positive, please check the website manually and rerun the check.")
+    print("If this is a false positive and a pull request, please contact the owner of the repository.")
+if missingknownhtmlfile:
+    print()
+    print("There are missing known html files in the repository.")
+    print("Please check if the file exists in the repository and add it to knownhtmlfile.txt.")
+    print("Or if the file is invalid, please remove it from knownhtmlfile.txt.")
+    exitasfailed = True
+if unknownhtmlfile:
+    print()
+    print("There are unknown html files in the repository.")
+    print("Please check if the file is valid in the repository and add it to knownhtmlfile.txt.")
+    print("Or if the file is invalid, please remove it from the repository.")
+    exitasfailed = True
+if not brokenlink and not external and not missingknownhtmlfile and not unknownhtmlfile:
+    print()
+    print("All checks passed. There are no broken links in the repository.")
+    print("Please note that this check does not check for javascript links.")
+    print("Please note that this check does not check for links in css files.")
+if exitasfailed:
+    print()
+    print("Exiting with code 1...")
     exit(1)
-elif external:
-    print("\n")
-    print("All links have been checked.")
-    print("One or more external links are broken.")
-    exit(1)
-elif brokenlink and external:
-    print("\n")
-    print("All links have been checked.")
-    print("One or more local and external links are broken.")
-    exit(1)
-else:
-    print("\n")
-    print("All links have been checked and passed.")
