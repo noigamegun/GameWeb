@@ -10,3 +10,6 @@ AKA, when it works.
 
 Powered by GitHub Pages
 Status badge by Better Stack
+
+### Note To Collaborators
+Please use merging when composing changes since BSS **WILL OVERWRITE ALL CHANGES** and potentially **REMOVING OTHER COLLABORATOR CHANGES**.
