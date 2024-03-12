@@ -13,3 +13,4 @@ Status badge by Better Stack
 
 ### Note To Collaborators
 Please use merging when composing changes since BSS **WILL OVERWRITE ALL CHANGES** and potentially **REMOVING OTHER COLLABORATOR CHANGES**.
+Same thing apply when editing the raw html and css data.
