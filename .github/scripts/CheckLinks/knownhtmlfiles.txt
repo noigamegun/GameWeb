@@ -1,7 +1,9 @@
 devbulid/index.html
 devbulid/contact.html
+chaika/index.html
+chaika/main.html
 chiya.html
 clonk.html
-google480a127760558daa.html
 index.html
 zulleyy.html
+daiyalocationcase.html
