@@ -1,9 +1,0 @@
-devbulid/index.html
-devbulid/contact.html
-chaika/index.html
-chaika/main.html
-chiya.html
-clonk.html
-index.html
-zulleyy.html
-daiyalocationcase.html
