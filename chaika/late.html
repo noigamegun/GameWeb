@@ -5,38 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chaika Late Timer</title>
   <script>
-    function getTimeDifference() {
-      // Get current date and time in milliseconds
-      const now = new Date().getTime();
+    function getTimeElapsed() {
+      // Get current date and time (local time)
+      const now = new Date();
 
-      // Set target date and time (21:00 GMT+7)
-      const targetDate = new Date();
-      targetDate.setHours(21, 0, 0, 0); // Set time to 21:00
-      targetDate.setUTCHours(targetDate.getUTCHours() + 7); // Adjust for GMT+7
+      // Set reference time (21:00 GMT+7) for the current day
+      const referenceTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 21, 0, 0);
 
       // Calculate the difference in milliseconds
-      const difference = targetDate.getTime() - now;
+      const timeDifference = now - referenceTime;
 
       // Convert milliseconds to hours, minutes, and seconds
-      const hours = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60 * 60));
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+      const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-      // Format the time string
-      const timeString = `${hours} hours, ${minutes} minutes, and ${seconds} seconds`;
+      // Format the output string
+      const outputString = `${hours.toString().padStart(2, '0')} Hours ${minutes.toString().padStart(2, '0')} Minute ${seconds.toString().padStart(2, '0')} Seconds`;
 
-      // Update the displayed text
-      document.getElementById("time-diff").textContent = timeString;
+      // Update the content of the paragraph element
+      document.getElementById("timeElapsed").textContent = outputString;
     }
 
-    // Call the getTimeDifference function on page load and every second
-    window.onload = getTimeDifference;
-    setInterval(getTimeDifference, 1000);
+    window.onload = getTimeElapsed;
+    setInterval(getTimeElapsed, 1000);
   </script>
 </head>
 <body style="text-align:center;border:3px solid black" >
   <h1>Chaika Late Timer</h1>
-  <p>If it's before 21:00 GMT+7. The time for the next stream will show instead.<p>
-  <p id="time-diff" style="font-weight:bold;font-size: 40px"></p>
+  <p id="timeElapsed" style="font-weight:bold;font-size: 40px"></p>
 </body>
 </html>
