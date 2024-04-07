@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/game11454
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://thapat.me
+  * I am game11454 (https://keybase.io/game11454) on keybase.
+  * I have a public key with fingerprint A467 4BC0 8A37 8C91 FF80  8FD1 8962 83EF A61D 8CD4
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01010bc53333f6eedbfe808f11d0e124b0c45656a7271c38cb42224276c430c031fd0a",
+      "fingerprint": "a4674bc08a378c91ff808fd1896283efa61d8cd4",
+      "host": "keybase.io",
+      "key_id": "896283efa61d8cd4",
+      "kid": "01010bc53333f6eedbfe808f11d0e124b0c45656a7271c38cb42224276c430c031fd0a",
+      "uid": "88a5756b44913f95bfc31c19ffca2619",
+      "username": "game11454"
+    },
+    "service": {
+      "hostname": "thapat.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1712491402,
+  "expire_in": 157680000,
+  "prev": "237ea39e382e0b4215fe9b4e64cf031cac032f579aca071a997913cdb11aa185",
+  "seqno": 3,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMImAnicrVJdSFRBFN4tlTIMSysMc+UWUWRy5/7fzcrASLOHyCj6gW3u3Bm9ut5d
+d6+WmEVkphYhZmRkkj1YWFIpkgqKWRBh7os/BWV/DwpFVPZQYmlzzd567MzDzBy+
+7zvnO5zHUfMdkc5K7fTnplXnh5z9Dy8VOsjSc1UljObTixl3CZOHZy/s1XHQ8uQZ
+OuNmWECPhkSeBpEw1jWCFVYhAOgsBpygsUgQJVGCMicDxCtIEziOEzhZQgLPIpYH
+RGchk8QQw8zGAX/AMC0qCwVJFjTEKpCXFaQCQmxRHSiqxCk8JlACuoJ0gRJzfEGb
+QZvTYBAnGz6aox/PbHv/wP/nvgv/1FGgKIuSJggq4IkqagTxAAGVEAQ5Cag2MIgD
+JszHFJ1NLwAEUWBKkxiaLjIQtidrW5mDWDnQD61k+k5i/AGf5UM+L03nWJY/6LZp
+VrHfxh3FmmdOwaMZpk6nSBlFOBA0fCbjBhSJLMOWBDK1pQKB5ZIYfMxvBLDHsBGi
+LCksDbsOLqKSHC9jyKuYVzjMUttAJFjVBCwJiFDfCFL3HBFlFSLIygCqqkxNI10D
+AEKgiIztqcD0MW6etgmzqWTQyDahVRjATGlf7+EwhzPSERE+z94uR+TC6L871/1q
+gaOm6GtYbKselxbTEb+/63jbki8TP8ebvI1ToVu1ZuzkouGNMZXfrbqZguGRen5d
+alWa1bW5t7qi4yy/rex64oHqjJtNg3VpLWfWTGYWkuUZY9XfxuPbzZ7tbzc0L9O1
+p5db7+zJOLll4GrPYqWmYbpi4naY692HyZjh8crdzoO54S3Mk/CqzkP7xk+Fto72
+lUdfEyPz12c9WjkYSn+5y1V3zzsSVZtaJk8Ghy5K7e6PN1zOtZneus6Y53cbXStC
+KQkzL/qnuo2xikujRyLGskLuZ5XN6dyPvB2bpl3dnnLtQdymT925V94be1NWv65P
+TE6YeNMmnODqf402DCSW70y+f+E36LFBuA==
+=XfJy
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/game11454
+
+==================================================================
