@@ -1,10 +1,10 @@
 # End-User License Agreement (EULA)
 
-This End-User License Agreement ("Agreement") is a legal agreement between you ("User") and Thapat and it's collaborator ("Company") regarding the use of `thapat.me` or any domain linked in the file `CNAME` ("Website"). By accessing or using the Website, you agree to be bound by the terms and conditions of this Agreement.
+This End-User License Agreement ("Agreement") is a legal agreement between you ("User") and Thapat and its collaborator ("Company," "We," "Us," "Our") regarding the use of `thapat.me` or any domain linked in the file `CNAME` ("Website"). By accessing or using the Website, you agree to be bound by the terms and conditions of this Agreement.
 
 ## License
 
-Subject to the terms and conditions of this Agreement, Company grants User a limited, non-exclusive, non-transferable license to access and use the Website for personal, non-commercial purposes. User may not perform any action that's against the included licence.
+Subject to the terms and conditions of this Agreement, Company grants User a limited, non-exclusive, non-transferable license to access and use the Website for personal, non-commercial purposes. User may not perform any action that's against the included license.
 
 ## Intellectual Property
 
@@ -30,8 +30,24 @@ Company may terminate this Agreement at any time without notice if User fails to
 
 Company reserves the right to amend this Agreement at any time without notice. Any changes to the Agreement will be effective immediately upon posting on the source code. User's continued use of the Website after any amendments constitutes acceptance of the updated Agreement.
 
+## Data Collection
+
+Company does not collect any personal data from users through the Website. However, please note that third-party services such as Cloudflare and GitHub may collect data as outlined in their respective privacy policies. You are encouraged to review the privacy policies of these services for more information.
+
+For Cloudflare's privacy policy, please visit [here](https://www.cloudflare.com/privacypolicy/).
+
+For GitHub's privacy policy, please visit [here](https://docs.github.com/en/github/site-policy/github-privacy-statement).
+
+## Data Deletion and Modification
+
+If you would like to request the deletion or modification of your personal data collected through the Website or data targeted toward you such as secret pages, you can contact the owner of the Website. However, please note that even if your data is deleted or modified, it may still be available in the commit history of the Website's source code.
+
+## Legal Action
+
+Before initiating any legal action against the Website, Users are advised to contact the owner of the Website to attempt to resolve the matter without any legal action.
+
 ## Entire Agreement
 
 This Agreement constitutes the entire agreement between User and Company regarding the use of the Website and supersedes any prior or contemporaneous understandings or agreements, whether written or oral.
 
-Refer to commit for the last updated date.
+Refer to the commits history for the last updated date.
