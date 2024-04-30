@@ -11,7 +11,6 @@ AKA, when it works.
 Powered by GitHub Pages
 Status badge by Better Stack
 
-### Note To Collaborators
-Please use merging when composing changes since BSS **WILL OVERWRITE ALL CHANGES** and potentially **REMOVING OTHER COLLABORATOR CHANGES**.
-
-Same thing apply when editing the raw html and css data. And also make a pull request while you at it.
+> [!WARNING]
+> Please use BSS to edit the source files to edit the website.
+> If not posible, commit in a separate branch and create a pull request to check for conflit since BSS **WILL OVERWRITE ALL CHANGES** and potentially **REMOVING OTHER COLLABORATOR CHANGES**.
