@@ -42,6 +42,10 @@ For GitHub's privacy policy, please visit [here](https://docs.github.com/en/gith
 
 If you would like to request the deletion or modification of your personal data collected through the Website or data targeted toward you such as secret pages, you can contact the owner of the Website. However, please note that even if your data is deleted or modified, it may still be available in the commit history of the Website's source code.
 
+If your country of residence have GDPR regulations, please mention your country of residence with verifiable proof.
+
+To delete data collected by third parties, Please contact the third party directly.
+
 ## Legal Action
 
 Before initiating any legal action against the Website, Users are advised to contact the owner of the Website to attempt to resolve the matter without any legal action.
