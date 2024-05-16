@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Mainpage</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/aos.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="background: var(--bs-body-color);">
+    <div class="col offset-xl-0" data-aos="fade-up" data-aos-offset="10" data-aos-once="true" style="margin: 25px;padding: 20px;background: var(--bs-secondary-text-emphasis);border-radius: 20px;">
+        <h1 class="text-center" style="color: var(--bs-body-bg);text-align: left;margin-top: 10px;">My GPG Key</h1>
+        <p class="text-center" style="color: var(--bs-body-bg);text-align: left;">To download my GPG key. Press one of the button below.<br>You may need to right click to save.</p>
+        <p style="color: var(--bs-body-bg);text-align: center;font-weight: bold;">If you don't know what to use, use Keybase.</p>
+        <div class="text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6" id="gpgdownbutton"><a class="btn btn-primary shadow" role="button" style="background: var(--bs-body-color);border-style: none;" href="https://thapat.me/gpg/key.asc">Download from the GitHub Repo</a></div>
+                    <div class="col-md-6" id="gpgdownbutton"><a class="btn btn-primary shadow" role="button" style="background: var(--bs-body-color);border-style: none;" href="https://keybase.io/game11454/pgp_keys.asc">Download from Keybase</a></div>
+                </div>
+            </div>
+        </div>
+        <p class="text-center" style="color: var(--bs-body-bg);text-align: left;margin-top: 20px;">To import to your keyring directly use the following command.</p>
+        <p style="color: var(--bs-body-bg);text-align: center;font-weight: bold;">Curl and GPG is required</p>
+        <div class="text-center" style="margin-bottom: 10px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="color: var(--bs-body-bg);">From GitHub Repo</p><code style="color: var(--bs-body-bg);background: var(--bs-body-color);padding: 10px;border-radius: 3px;margin: initial;">curl https://thapat.me/gpg/key.asc | gpg --import</code>
+                    </div>
+                    <div class="col-md-6">
+                        <p style="color: var(--bs-body-bg);">From Keybase</p><code style="color: var(--bs-body-bg);background: var(--bs-body-color);padding: 10px;border-radius: 3px;margin: initial;font-size: 13px;">curl https://keybase.io/game11454/pgp_keys.asc | gpg --import</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+</body>
+
+</html>
