@@ -1,15 +1,10 @@
-[![Better Stack Badge](https://uptime.betterstack.com/status-badges/v2/monitor/11vhe.svg)](https://uptime.betterstack.com/?utm_source=status_badge)
+[![Better Stack Badge](https://uptime.betterstack.com/status-badges/v2/monitor/11vhe.svg)](https://uptime.betterstack.com/?utm_source=status_badge) [![Donate](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/game11454/donate)
 
 # GameWeb
 
 This is where the code for thapat.me rests.
 
-Please note that the devbuild will not be updated with every web change.
-It will be updated when it is stable enough.
-AKA, when it works.
-
 Powered by GitHub Pages
-Status badge by Better Stack
 
 > [!WARNING]
 > Please use BSS to edit the source files to edit the website.
