@@ -32,11 +32,13 @@ Company reserves the right to amend this Agreement at any time without notice. A
 
 ## Data Collection
 
-Company does not collect any personal data from users through the Website. However, please note that third-party services such as Cloudflare and GitHub may collect data as outlined in their respective privacy policies. You are encouraged to review the privacy policies of these services for more information.
+Company does not collect any personal data from users through the Website. However, please note that third-party services such as Cloudflare, Google Analytics, and GitHub may collect data as outlined in their respective privacy policies. You are encouraged to review the privacy policies of these services for more information.
 
 For Cloudflare's privacy policy, please visit [here](https://www.cloudflare.com/privacypolicy/).
 
 For GitHub's privacy policy, please visit [here](https://docs.github.com/en/github/site-policy/github-privacy-statement).
+
+For Google Analytics's privacy policy, please visit [here](https://policies.google.com/technologies/partner-sites).
 
 ## Data Deletion and Modification
 
