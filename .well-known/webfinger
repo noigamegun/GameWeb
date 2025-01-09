@@ -1,0 +1,28 @@
+{
+  "subject": "acct:Game11454@mastodon.social",
+  "aliases": [
+    "https://mastodon.social/@Game11454",
+    "https://mastodon.social/users/Game11454"
+  ],
+  "links": [
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://mastodon.social/@Game11454"
+    },
+    {
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://mastodon.social/users/Game11454"
+    },
+    {
+      "rel": "http://ostatus.org/schema/1.0/subscribe",
+      "template": "https://mastodon.social/authorize_interaction?uri={uri}"
+    },
+    {
+      "rel": "http://webfinger.net/rel/avatar",
+      "type": "image/jpeg",
+      "href": "https://files.mastodon.social/accounts/avatars/112/612/105/911/724/924/original/f90adc00a50f457a.jpg"
+    }
+  ]
+}
