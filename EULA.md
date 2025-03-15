@@ -1,6 +1,6 @@
 # End-User License Agreement (EULA)
 
-This End-User License Agreement ("Agreement") is a legal agreement between you ("User") and Thapat and its collaborator ("Company," "We," "Us," "Our") regarding the use of `thapat.me` or any domain linked in the file `CNAME` ("Website"). By accessing or using the Website, you agree to be bound by the terms and conditions of this Agreement.
+This End-User License Agreement ("Agreement") is a legal agreement between you ("User") and Thapat and its collaborator ("Company," "We," "Us," "Our") regarding the use of of all GameWeb services on `thapat.me`, `game.hackclub.app` or any domain or sub-domains linked in the file `CNAME` ("Website"). By accessing or using the Website, you agree to be bound by the terms and conditions of this Agreement.
 
 ## License
 
