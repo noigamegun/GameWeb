@@ -1,10 +1,16 @@
-[![Better Stack Badge](https://uptime.betterstack.com/status-badges/v2/monitor/11vhe.svg)](https://uptime.betterstack.com/?utm_source=status_badge) [![Donate](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/game11454/donate)
+<a href="https://hcb.hackclub.com/donations/start/gameweb">
+<img alt="Donate at HCB shield" src="https://img.shields.io/badge/Donate_at-HCB-EC3750"></img>
+</a>
 
 # GameWeb
 
-This is where the code for thapat.me rests.
+Source code for https://thapat.me. Written using Bootstrap Studio.
 
-Powered by GitHub Pages
+Powered by GitHub Pages and Cloudflare Pages for PR previews.
+Alternative site is available at game.hackclub.app. Note that this server is updated manually.
+
+> [!INFO]
+> This website uses Bootstrap 5. This means that the current Bootstrap version is current outdated. We have no plan of upgrading bootstrap anytime soon.
 
 > [!WARNING]
 > Please use BSS to edit the source files to edit the website.
