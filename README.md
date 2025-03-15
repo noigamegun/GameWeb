@@ -10,7 +10,7 @@ Powered by GitHub Pages and Cloudflare Pages for PR previews.
 Alternative site is available at game.hackclub.app. Note that this server is updated manually.
 
 > [!INFO]
-> This website uses Bootstrap 5. This means that the current Bootstrap version is current outdated. We have no plan of upgrading bootstrap anytime soon.
+> This website uses Bootstrap 5. This means that the current Bootstrap version is outdated. We have no plan of upgrading bootstrap anytime soon.
 
 > [!WARNING]
 > Please use BSS to edit the source files to edit the website.
