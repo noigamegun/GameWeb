@@ -1,7 +1,3 @@
-<a href="https://hcb.hackclub.com/donations/start/gameweb">
-<img alt="Donate at HCB shield" src="https://img.shields.io/badge/Donate_at-HCB-EC3750"></img>
-</a>
-
 # GameWeb
 
 Source code for https://thapat.me. Written using Bootstrap Studio.
@@ -9,7 +5,7 @@ Source code for https://thapat.me. Written using Bootstrap Studio.
 Powered by GitHub Pages and Cloudflare Pages for PR previews.
 Alternative site is available at game.hackclub.app. Note that this server is updated manually.
 
-> [!INFO]
+> [!NOTE]
 > This website uses Bootstrap 5. This means that the current Bootstrap version is outdated. We have no plan of upgrading bootstrap anytime soon.
 
 > [!WARNING]
