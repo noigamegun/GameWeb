@@ -31,6 +31,6 @@ If you encounter a bug, please submit a detailed bug report using issues. Includ
 If you have an idea for a new feature, please submit a feature request using issues. Describe the feature and explain why it would be beneficial.
 
 ## Contact
-If you have any questions or need further assistance, feel free to contact us at [Game11454@proton.me](mailto:Game11454@proton.me).
+If you have any questions or need further assistance, feel free to contact us at [conduct@thapat.me](mailto:conduct@thapat.me).
 
 Happy contributing!
